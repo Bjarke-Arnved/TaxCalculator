@@ -11,6 +11,6 @@ public class TaxCalculator {
 
     public static double CalculateTax(int monthlyIncome) {
         //Skriv din implementation her.
-        return 0;
+        return -1;
     }
 }
