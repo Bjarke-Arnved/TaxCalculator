@@ -11,6 +11,22 @@ public class TaxCalculator {
 
     public static double CalculateTax(int monthlyIncome) {
         //Skriv din implementation her.
-        return -1;
+
+        int personalAllowance = 48000;
+        int highIncomeTax = 568900;
+        double taxYearly = 0;
+        double tax = 0.37;
+        double highTax = 0.15;
+
+        if(monthlyIncome * 12 > highIncomeTax) {
+            taxYearly = (((monthlyIncome * 12 - personalAllowance) * tax) + (monthlyIncome * 12 - highIncomeTax) * highTax);
+        }
+        else if(monthlyIncome * 12 > personalAllowance) {
+            taxYearly = ((monthlyIncome * 12 - personalAllowance) * tax);
+        }
+
+        taxYearly /= 12;
+
+        return taxYearly;
     }
 }
